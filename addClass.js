@@ -4,10 +4,7 @@
 function addClass(node, classes) {
     for (let key in classes) {
         var value = classes[key]
-        if (value) {
-            node.classList.add(key)
-        } else {
-            node.classList.remove(key)
-        }
+        var methodName = value ? 'add' : 'remove'
+        node.classList[methodName](key)
     }
 }

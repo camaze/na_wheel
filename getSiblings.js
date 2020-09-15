@@ -1,3 +1,5 @@
+/*获得一个节点的兄弟节点*/
+
 function getSiblings(node) {
     /*API*/
     var allChildren = node.parentNode.children

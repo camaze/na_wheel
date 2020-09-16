@@ -1,6 +1,6 @@
 setTimeout(() => {
     $('.images>img:nth-child(1)').css({
-        transform: 'translatX(-100%)'
+        transform: 'translateX(-100%)'
     })
     $('.images>img:nth-child(2)').css({
         transform: 'translateX(-100%)'
@@ -14,7 +14,7 @@ setTimeout(() => {
 
 setTimeout(() => {
     $('.images>img:nth-child(2)').css({
-        transform: 'translatX(-200%)'
+        transform: 'translateX(-200%)'
     })
     $('.images>img:nth-child(3)').css({
         transform: 'translateX(-100%)'
@@ -28,7 +28,7 @@ setTimeout(() => {
 
 setTimeout(() => {
     $('.images>img:nth-child(3)').css({
-        transform: 'translatX(-200%)'
+        transform: 'translateX(-200%)'
     })
     $('.images>img:nth-child(1)').css({
         transform: 'translateX(-100%)'

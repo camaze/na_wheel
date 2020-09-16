@@ -1,0 +1,20 @@
+.images {
+    display: flex;
+    align-items: flex-start;
+    /* display: block; */
+    transition: all 0.5s;
+}
+
+.images>img {
+    vertical-align: top;
+}
+
+.window {
+    width: 300px;
+    /* 下面这行重要 */
+    overflow: hidden;
+}
+
+.red {
+    color: red;
+}

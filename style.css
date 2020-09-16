@@ -1,19 +1,50 @@
-.images {
-    display: flex;
-    align-items: flex-start;
-    /* display: block; */
-    transition: all 0.5s;
+* {
+    margin: 0;
+    padding: 0;
 }
 
-.images>img {
-    vertical-align: top;
+* {
+    /* 宽度包括border */
+    box-sizing: border-box;
 }
 
 .window {
     width: 300px;
+    height: 200px;
+    margin: 20px auto;
     overflow: hidden;
 }
 
-.red {
-    color: red;
+.images {
+    position: relative;
+}
+
+.images>img {
+    width: 100%;
+    transition: all 0.3s;
+}
+
+.images>img:nth-child(1) {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.images>img:nth-child(2) {
+    position: absolute;
+    top: 0;
+    left: 100%;
+}
+
+.images>img:nth-child(3) {
+    position: absolute;
+    top: 0;
+    left: 100%;
+}
+
+.images>img.right {
+    left: 100%;
+    position: absolute;
+    top: 0;
+    left: 100%;
 }

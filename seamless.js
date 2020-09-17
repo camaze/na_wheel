@@ -10,7 +10,7 @@
 
 let n
 init()
-setInterval(() => {
+let timer = setInterval(() => {
     // $(`.images>img:nth-child(${x(n)})`).removeClass('current').addClass('leave') //一旦离开就进入等待区
     makeLeave(getImage(n)).one('transitionend', (e) => {
         makeWait($(e.currentTarget))
@@ -18,6 +18,20 @@ setInterval(() => {
     makeCurrent(getImage(n + 1))
     n += 1
 }, 2000)
+
+document.addEventListener('visibilitychange', function (e) {
+    if (document.hidden) {
+        window.clearInterval(timer)
+    } else {
+        timer = setInterval(() => {
+            makeLeave(getImage(n)).one('transitionend', (e) => {
+                makeWait($(e.currentTarget))
+            })
+            makeCurrent(getImage(n + 1))
+            n += 1
+        }, 2000)
+    }
+})
 
 
 

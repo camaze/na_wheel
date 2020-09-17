@@ -22,28 +22,22 @@
 .images>img {
     width: 100%;
     transition: all 0.3s;
-}
-
-.images>img:nth-child(1) {
     position: absolute;
     top: 0;
+}
+
+.images>img.current {
     left: 0;
+    transform: translateX(0);
+    /*浮在最前面*/
+    z-index: 1;
 }
 
-.images>img:nth-child(2) {
-    position: absolute;
-    top: 0;
-    left: 100%;
+.images>img.leave {
+    transform: translateX(-100%);
+    z-index: 1;
 }
 
-.images>img:nth-child(3) {
-    position: absolute;
-    top: 0;
-    left: 100%;
-}
-
-.images>img.right {
-    position: absolute;
-    top: 0;
-    left: 100%;
+.images>img.wait {
+    transform: translateX(100%);
 }

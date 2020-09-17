@@ -1,41 +1,29 @@
-setTimeout(() => {
-    $('.images>img:nth-child(1)').css({
-        transform: 'translateX(-100%)'
-    })
-    $('.images>img:nth-child(2)').css({
-        transform: 'translateX(-100%)'
-    })
-    $('.images>img:nth-child(1)').on('transitionend', function (e) {
-        $(e.currentTarget).addClass('right').css({
-            transform: 'none'
-        })
-    })
-}, 3000)
+// setTimeout(() => {
+//     $('.images>img:nth-child(1)').addClass('current')
+//     $('.images>img:nth-child(2)').addClass('wait')
+//     $('.images>img:nth-child(3)').addClass('wait')
+// }, 20)
 
-setTimeout(() => {
-    $('.images>img:nth-child(2)').css({
-        transform: 'translateX(-200%)'
-    })
-    $('.images>img:nth-child(3)').css({
-        transform: 'translateX(-100%)'
-    })
-    $('.images>img:nth-child(2)').on('transitionend', function (e) {
-        $(e.currentTarget).addClass('right').css({
-            transform: 'none'
-        })
-    })
-}, 6000)
+$('.images>img:nth-child(1)').addClass('current')
+$('.images>img:nth-child(2)').addClass('wait')
+$('.images>img:nth-child(3)').addClass('wait')
 
-setTimeout(() => {
-    $('.images>img:nth-child(3)').css({
-        transform: 'translateX(-200%)'
-    })
-    $('.images>img:nth-child(1)').css({
-        transform: 'translateX(-100%)'
-    })
-    $('.images>img:nth-child(3)').on('transitionend', function (e) {
-        $(e.currentTarget).addClass('right').css({
-            transform: 'none'
+let n = 1
+setInterval(() => {
+    $(`.images>img:nth-child(${x(n)})`).removeClass('current').addClass('leave') //一旦离开就进入等待区
+        .one('transitionend', (e) => {
+            $(e.currentTarget).removeClass('leave').addClass('wait')
         })
-    })
-}, 9000)
+    $(`.images>img:nth-child(${x(n+1)})`).removeClass('wait').addClass('current')
+    n += 1
+}, 2000)
+
+function x(n) {
+    if (n > 3) {
+        n = n % 3
+        if (n === 0) {
+            n = 3
+        }
+    }
+    return n
+}

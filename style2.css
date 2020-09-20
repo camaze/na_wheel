@@ -1,0 +1,27 @@
+/* 和 ra_eamless.js搭配 */
+/* ！！！！！！！！！！！！ */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    /* 宽度包括border */
+    box-sizing: border-box;
+}
+
+.window {
+    width: 300px;
+    height: 200px;
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+.images {
+    display: flex;
+    transition: all 1s;
+}
+
+.images>img {
+    width: 100%;
+}

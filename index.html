@@ -1,22 +1,29 @@
+<!-- 和style.css/seamless.js搭配 -->
 <!DOCTYPE html>
 <html lang="zh-Hans">
 <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="./style.css">
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+    <link rel="stylesheet" href="./style2.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>seamless slide</title>
 </head>
 <body>
 
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
     <div class="window">
-        <div class="images" id="images">
-            <img id=fule src="./img/red.png" alt="imge" width="300px">
+        <div class="images" id="slides">
+            <img src="./img/red.png" alt="imge" width="300px">
             <img src="./img/yellow.png" alt="imge" width="300px">
             <img src="./img/blue.png" alt="imge" width="300px">
         </div>
     </div>
-    <script src='./seamless.js'></script>
+    <div style='text-align: center;' id=buttonWrapper>
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+    </div>
+    <!-- <script src='./seamless.js'></script> -->
+    <script src='./ra_seamless.js'></script>
 </body>
 </html>
